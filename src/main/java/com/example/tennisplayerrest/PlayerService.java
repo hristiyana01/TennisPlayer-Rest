@@ -27,7 +27,7 @@ public class PlayerService {
 
 
        if(tempPlayer.isEmpty())
-           throw new PlayerNotFoundException("Player with id:" + id + "not found.");
+           throw new PlayerNotFoundException("Player with id:" + id + " not found.");
 
        return tempPlayer.get();
     }
@@ -56,7 +56,7 @@ public class PlayerService {
                 ReflectionUtils.setField(field, player.get(), value);
             });
         } else
-            throw new PlayerNotFoundException("Player with id {"+ id +"} not found");
+            throw new PlayerNotFoundException("Player with id { "+ id +" } not found");
         return playerRepository.save(player.get());
     }
     @Transactional
